@@ -1,0 +1,34 @@
+name: main
+
+# Automatically cancel a previous run.
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+env:
+  CONDA_EXE: mamba
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - '*'
+
+jobs:
+
+  run-type-checking:
+
+    name: Run tests for type-checking
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: .python-version
+          allow-prereleases: true
+          cache: pip
+      - run: pip install tox-uv
+      - run: tox -e typing
