@@ -9,7 +9,7 @@ from project.config import data_catalog
 
 
 def task_create_data_catalog_node(
-    node: Annotated[PickleNode, Product] = cast(PickleNode, data_catalog["first"]),  # noqa: B008
+    node: Annotated[PickleNode, Product] = cast("PickleNode", data_catalog["first"]),  # noqa: B008
 ) -> None:
     node.save("Hello,")
 
