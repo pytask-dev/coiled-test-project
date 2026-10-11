@@ -1,6 +1,7 @@
+from typing import Annotated
+
 from pytask import Product
 from pytask import PythonNode
-from typing_extensions import Annotated
 
 from project.config import BLD
 

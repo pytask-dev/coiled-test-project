@@ -1,7 +1,7 @@
 from pathlib import Path
+from typing import Annotated
 
 from pytask import Product
-from typing_extensions import Annotated
 
 from project.config import BLD
 

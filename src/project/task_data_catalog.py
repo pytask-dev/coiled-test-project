@@ -1,8 +1,8 @@
+from typing import Annotated
 from typing import cast
 
 from pytask import PickleNode
 from pytask import Product
-from typing_extensions import Annotated
 
 from project.config import BLD
 from project.config import data_catalog
