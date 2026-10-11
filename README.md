@@ -2,3 +2,5 @@
 
 This project allows testing all possible interactions between pytask, pytask-parallel
 and coiled.
+
+Requires Python 3.11 or newer.
