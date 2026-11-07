@@ -1879,17 +1879,17 @@ typing = [
 
 [package.metadata]
 requires-dist = [
-    { name = "coiled", marker = "extra == 'coiled'" },
-    { name = "dask", extras = ["distributed"], marker = "extra == 'dask'" },
-    { name = "pytask", git = "https://github.com/pytask-dev/pytask.git?branch=main" },
-    { name = "pytask-parallel", git = "https://github.com/pytask-dev/pytask-parallel.git?branch=main" },
-    { name = "pytest", marker = "extra == 'test'" },
-    { name = "s3fs", specifier = ">=2024.3.1" },
+    { name = "coiled", marker = "extra == 'coiled'", specifier = ">=1.135.6,<1.136" },
+    { name = "dask", extras = ["distributed"], marker = "extra == 'dask'", specifier = ">=2026.8.0,<2026.9" },
+    { name = "pytask", specifier = ">=0.6.0,<0.7" },
+    { name = "pytask-parallel", specifier = ">=0.5.5,<0.6" },
+    { name = "pytest", marker = "extra == 'test'", specifier = ">=9.2.0,<9.3" },
+    { name = "s3fs", specifier = ">=2026.9.0,<2026.10" },
 ]
 provides-extras = ["coiled", "dask", "test"]
 
 [package.metadata.requires-dev]
-typing = [{ name = "ty", specifier = ">=0.0.91" }]
+typing = [{ name = "ty", specifier = ">=0.0.99,<0.1" }]
 
 [[package]]
 name = "prometheus-client"
@@ -2150,8 +2150,8 @@ wheels = [
 
 [[package]]
 name = "pytask"
-version = "0.6.1.dev142+g938532dd5"
-source = { git = "https://github.com/pytask-dev/pytask.git?branch=main#938532dd58d3fa0630b823edc1fb50f769d9208a" }
+version = "0.6.0"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
     { name = "click-default-group" },
@@ -2161,14 +2161,17 @@ dependencies = [
     { name = "pluggy" },
     { name = "rich" },
     { name = "sqlalchemy" },
-    { name = "typing-extensions" },
     { name = "universal-pathlib" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f5/36/7a58333979ce598d0c81de5c0bd215dd37230aed26f77a88247fa064086a/pytask-0.6.0.tar.gz", hash = "sha256:c7c9f0f68e95646fade14bada5ef89cc8a48abf47fe5d47ab9b671d06abe8f93", size = 121274, upload-time = "2026-05-01T19:19:18.147Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d7/54/c30cb1d08258612ece1dfa72c6918998bebecb916c54fca6d806bc780f2b/pytask-0.6.0-py3-none-any.whl", hash = "sha256:cc4c31ead39f5c64be037640f7bf589b68bd0e87ea9e1a049ba86ceab42c9d13", size = 155678, upload-time = "2026-05-01T19:19:19.419Z" },
 ]
 
 [[package]]
 name = "pytask-parallel"
-version = "0.5.6.dev20+g2eef6b453"
-source = { git = "https://github.com/pytask-dev/pytask-parallel.git?branch=main#2eef6b4533000c24465bd3c1e915473a644b8548" }
+version = "0.5.5"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
     { name = "click" },
@@ -2177,6 +2180,10 @@ dependencies = [
     { name = "pluggy" },
     { name = "pytask" },
     { name = "rich" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c8/97/1d2e75e90a72bb4effcb7663d34db738318b7c3cfc9f1289f949eca71216/pytask_parallel-0.5.5.tar.gz", hash = "sha256:50af5e3733d60ae41a38c2294e52572c19154a10e97b8858f107e3a4afd07a47", size = 14536, upload-time = "2026-08-23T13:36:29.363Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/80/e5/7e37396b6da575d4085bd7f8afadc9803f4fda4b07a1d3e30fe6d8b00467/pytask_parallel-0.5.5-py3-none-any.whl", hash = "sha256:88ec676b085cc945a58675f5e6372344d010763b2d21e8820c7daf6c9845c408", size = 19272, upload-time = "2026-08-23T13:36:28.327Z" },
 ]
 
 [[package]]
