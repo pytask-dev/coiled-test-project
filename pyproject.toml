@@ -7,7 +7,7 @@ authors = [
 ]
 dependencies = [
     "pytask>=0.4.5",
-    "pytask-parallel[coiled]>=0.4.1",
+    "pytask-parallel>=0.4.1",
     "s3fs>=2024.3.1",
 ]
 readme = "README.md"
@@ -28,25 +28,15 @@ test = [
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.mypy]
-files = ["src"]
-check_untyped_defs = true
-disallow_any_generics = true
-disallow_incomplete_defs = true
-disallow_untyped_defs = true
-no_implicit_optional = true
-warn_redundant_casts = true
-warn_unused_ignores = true
-ignore_missing_imports = true
+[dependency-groups]
+typing = ["ty>=0.0.91"]
 
-[[tool.mypy.overrides]]
-module = "tests.*"
-disallow_untyped_defs = false
-ignore_errors = true
+[tool.uv.sources]
+pytask = { git = "https://github.com/pytask-dev/pytask.git", branch = "main" }
+pytask-parallel = { git = "https://github.com/pytask-dev/pytask-parallel.git", branch = "main" }
 
-[tool.rye]
-managed = true
-dev-dependencies = []
+[tool.ty.terminal]
+error-on-warning = true
 
 [tool.hatch.metadata]
 allow-direct-references = true

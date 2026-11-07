@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import TYPE_CHECKING
+from typing import Literal
 
 import coiled
 from pytask import DataCatalog
@@ -17,7 +18,7 @@ BLD = SRC.parent.parent / "bld"
 
 def _build_client(n_workers: int) -> Executor:
     return (
-        coiled.Cluster(n_workers=n_workers, name="coiled-project")
+        coiled.Cluster[Literal[False]](n_workers=n_workers, name="coiled-project")
         .get_client()
         .get_executor()
     )
